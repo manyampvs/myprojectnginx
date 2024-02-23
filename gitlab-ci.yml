@@ -1,0 +1,12 @@
+stages:
+  - retrieve_cidr
+  - create_infrastructure
+
+retrieve_cidr:
+  script:
+    - python retrieve_cidr.py
+
+create_infrastructure:
+  script:
+    - terraform init
+    - terraform apply -auto-approve
